@@ -1,0 +1,25 @@
+class Solution
+{
+	// Function to find the peak element
+	// arr[]: input array
+	// n: size of array a[]
+	public int peakElement(int[] arr,int n)
+    {
+       return peakelementuntil(arr,0,n-1,n);
+    }
+    
+    public int peakelementuntil(int arr[], int low, int high,int n)
+    {
+        int mid = (low+high)/2;
+        
+        if((mid==0 || arr[mid-1]<=arr[mid] )&&(mid==n-1 || arr[mid+1]<=arr[mid]))
+        
+        return mid;
+        
+        else if(mid>0 && arr[mid-1]>arr[mid])
+         
+         return peakelementuntil(arr,low, mid-1,n);
+         else
+         return peakelementuntil(arr,mid+1,high,n);
+    }
+}

@@ -1,0 +1,26 @@
+class Solution {
+    public int firstElementKTime(int n, int k, int[] arr) { 
+        // Initialize a HashMap to store the frequency of elements
+        HashMap<Integer, Integer> s = new HashMap<Integer, Integer>();
+        
+        // Iterate through the array
+        for(int i=0; i<n; i++){
+            // If the element is already present in the HashMap, increment its frequency
+            if(s.containsKey(arr[i])) {
+                s.put(arr[i], s.get(arr[i]) + 1); 
+            }
+            // If the element is not present, add it to the HashMap with frequency 1
+            else {
+                s.put(arr[i], 1);
+            } 
+            // Check if the frequency of the element is equal to k
+            if(s.get(arr[i])==k){
+                // Return the element if the frequency is k
+                return arr[i];
+            } 
+        }
+        
+        // Return -1 if no element with frequency k is found
+        return -1;
+    } 
+}

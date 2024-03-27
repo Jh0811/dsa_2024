@@ -1,2 +1,2 @@
 # dsa_2024
-Daily problem solving in javascript
+Daily problem solving in java
